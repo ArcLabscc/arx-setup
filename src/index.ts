@@ -7,7 +7,7 @@ import * as os from "os";
 
 // --- Constants ---
 
-const ARX_API = "https://api.synap.ing";
+const ARX_API = process.env.ARX_URL || "https://api.synap.ing";
 const CONFIG_DIR = path.join(os.homedir(), ".arx");
 const CONFIG_PATH = path.join(CONFIG_DIR, "config.json");
 const CLAUDE_SETTINGS = path.join(os.homedir(), ".claude", "settings.json");
