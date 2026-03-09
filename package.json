@@ -1,0 +1,28 @@
+{
+  "name": "@arx/setup",
+  "version": "0.1.0",
+  "description": "One-command setup for ARX knowledge graph — connect your AI tools to your personal memory",
+  "main": "dist/index.js",
+  "bin": {
+    "arx-setup": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["arx", "knowledge-graph", "setup", "claude", "ai-memory"],
+  "author": "Arc Labs",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist/"
+  ]
+}
