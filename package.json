@@ -1,6 +1,6 @@
 {
   "name": "arx-setup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One-command setup for ARX knowledge graph — connect your AI tools to your personal memory",
   "main": "dist/index.js",
   "bin": {

@@ -127,7 +127,7 @@ async function login(
   email: string,
   password: string
 ): Promise<LoginResult> {
-  const res = await fetch(`${endpoint}/api/v2/auth/login`, {
+  const res = await fetch(`${endpoint}/api/v3/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -144,7 +144,7 @@ async function login(
   const data = (await res.json()) as Record<string, unknown>;
 
   return {
-    jwt: data.token as string,
+    jwt: data.access_token as string,
     api_key: data.api_key as string,
     slug: data.slug as string,
     admin: data.admin as boolean | undefined,
@@ -157,10 +157,10 @@ async function register(
   password: string,
   slug: string
 ): Promise<LoginResult> {
-  const res = await fetch(`${endpoint}/api/v2/auth/register`, {
+  const res = await fetch(`${endpoint}/api/v3/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password, slug }),
+    body: JSON.stringify({ email, password, slug, display_name: slug }),
   });
 
   if (!res.ok) {
@@ -174,7 +174,7 @@ async function register(
   const data = (await res.json()) as Record<string, unknown>;
 
   return {
-    jwt: data.token as string,
+    jwt: data.access_token as string,
     api_key: data.api_key as string,
     slug: data.slug as string,
     admin: false,
